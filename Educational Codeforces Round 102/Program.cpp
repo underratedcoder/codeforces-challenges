@@ -100,20 +100,13 @@ int main()
                 maxm = max(maxm, left_max);
                 prev = arr[ra];
             }
-            if (la <= ra && lb <= rb)
+            if (lb <= rb)
             {
         
                 right_min = minQuery(0, n - 1, 0, min_seg, lb, rb);
                 right_max = maxQuery(0, n - 1, 0, max_seg, lb, rb);
                 minm = min(minm, prev - arr[lb - 1] + right_min);
                 maxm = max(maxm, prev - arr[lb - 1] + right_max);
-            }
-            else if (lb <= rb)
-            {
-                right_min = minQuery(0, n - 1, 0, min_seg, lb, rb);
-                right_max = maxQuery(0, n - 1, 0, max_seg, lb, rb);
-                minm = min(minm, right_min - arr[lb - 1]);
-                maxm = max(maxm, right_max - arr[lb - 1]);
             }
             cout << maxm - minm + 1 << endl;
         }
