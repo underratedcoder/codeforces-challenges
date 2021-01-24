@@ -3,6 +3,7 @@
     "files.associations": {
         "iostream": "cpp",
         "unordered_map": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "exception": "cpp"
     }
 }
