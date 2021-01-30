@@ -31,7 +31,7 @@ boolean isPrime(lli n)
 bool primes[31001];
 void calPrimes(lli n)
 {
-    memset(primes, true, sizeof(pr));
+    memset(primes, true, sizeof(primes));
     primes[0] = false;
     primes[1] = false;
     for (lli j = 2; j * j <= n; j++)
