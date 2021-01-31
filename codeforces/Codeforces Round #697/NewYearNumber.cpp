@@ -1,24 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+#define li long int
+#define lli long long int
+
 int main()
 {
-    int t;
+    lli t, n, i, j, ok;
     cin >> t;
+
     while (t--)
     {
-        int n;
         cin >> n;
-        int flag = 0;
-        while (n > 0)
+        ok = 0;
+        while (n >= 2020)
         {
+
             if (n % 2020 == 0 || n % 2021 == 0)
-                flag = 1;
-            n -= 2020;
+            {
+                ok = 1;
+                break;
+            }
+            n = n - 2021;
         }
-        if (flag)
-            cout << "yes" << endl;
+        if (ok)
+        {
+            cout << "YES" << endl;
+        }
         else
-            cout << "no" << endl;
+        {
+            cout << "NO" << endl;
+        }
     }
-    return 0;
 }
