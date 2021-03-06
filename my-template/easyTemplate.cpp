@@ -7,7 +7,6 @@ using namespace std;
 #define sfor(i, a, b) for (lli i = a; i < b; i++)
 #define rfor(i, a, b) for (lli i = a; i >= b; i--)
 #define pb push_back
-#define mp make_pair
 lli mod = 1000000007;
 
 bool isPowerOfTwo(lli n)
@@ -21,45 +20,6 @@ bool isPowerOfTwo(lli n)
         n = n / 2;
     }
     return 1;
-}
-
-bool isPalindrome(string s)
-{
-    lli l = 0;
-    lli h = s.size() - 1;
-    while (h > l)
-    {
-        if (s[l++] != s[h--])
-        {
-
-            return false;
-        }
-    }
-    return true;
-}
-
-//to find nth fibonacci number.
-//This code returns Fn and Fn+1 as a pair.
-pair<lli, lli> fib(lli n)
-{
-    if (n == 0)
-        return {0, 1};
-
-    auto p = fib(n >> 1);
-    lli c = p.first * (2 * p.second - p.first);
-    lli d = p.first * p.first + p.second * p.second;
-    if (n & 1)
-        return {d, c + d};
-    else
-        return {c, d};
-}
-
-lli fact(lli n)
-{
-    lli res = 1;
-    for (lli i = n; i >= 1; i--)
-        (res *= i) %= mod;
-    return (res % mod);
 }
 
 lli power(lli a, lli b, lli mod)
@@ -76,40 +36,6 @@ lli power(lli a, lli b, lli mod)
         a = (a * a) % mod;
     }
     return ans;
-}
-
-//THIS IS THE CODE TO FIND ALL PRIME NUMBERS IN THE RANGE "L" to "R";
-vector<lli> segmentedSieve(lli L, lli R)
-{
-    // generate all primes up to sqrt(R)
-    lli lim = sqrt(R);
-    vector<bool> mark(lim + 1, false);
-    vector<lli> primes;
-    for (lli i = 2; i <= lim; ++i)
-    {
-        if (!mark[i])
-        {
-            primes.emplace_back(i);
-            for (lli j = i * i; j <= lim; j += i)
-                mark[j] = true;
-        }
-    }
-
-    vector<bool> isPrime(R - L + 1, true);
-    for (lli i : primes)
-        for (lli j = max(i * i, (L + i - 1) / i * i); j <= R; j += i)
-            isPrime[j - L] = false;
-    if (L == 1)
-        isPrime[0] = false;
-    vector<long long> realprime;
-    for (lli i = 0; i <= R - L; i++)
-    {
-        if (isPrime[i])
-        {
-            realprime.emplace_back(i + L);
-        }
-    }
-    return realprime;
 }
 
 // Returns ceiling for a/b
