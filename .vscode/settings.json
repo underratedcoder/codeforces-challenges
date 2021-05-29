@@ -4,6 +4,19 @@
         "iostream": "cpp",
         "unordered_map": "cpp",
         "utility": "cpp",
-        "exception": "cpp"
+        "exception": "cpp",
+        "random": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "algorithm": "cpp",
+        "cmath": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "list": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp"
     }
 }

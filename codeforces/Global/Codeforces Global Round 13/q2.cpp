@@ -27,33 +27,18 @@ int main()
     cin >> t;
     while (t--)
     {
-        lli n, k, maxm;
-        cin >> n >> k;
-        maxm = (n - 1) / 2;
-        if (k > maxm)
-        {
-            cout << -1 << endl;
-            continue;
-        }
+        lli n;
+        cin >> n;
         vector<lli> v(n);
-        for (i = 1; i <= n; i++)
+        for (i = 0; i < n; i++)
         {
-            v[i - 1] = i;
-        }
-        for (i = n - 2; i >= 0; i = i - 2)
-        {
-            if (k > 0)
-            {
-                swap(v[i], v[i + 1]);
-                k--;
-            }
-            else
-                break;
+            cin >> v[i];
         }
         for (i = 0; i < n; i++)
         {
             cout << v[i] << " ";
         }
         cout << endl;
+        cout << "YES" << endl;
     }
 }
